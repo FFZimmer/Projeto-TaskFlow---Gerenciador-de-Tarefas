@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: task-manager-backend
+    environment:
+      - PORT=5000
+      - DB_URI=postgresql://postgres:password@db:5432/taskmanager
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: task-manager-frontend
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:latest
+    container_name: task-manager-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=taskmanager
+    ports:
+      - "5432:5432"
+    volumes:
+      - taskmanager-data:/var/lib/postgresql/data
+
+volumes:
+  taskmanager-data:
