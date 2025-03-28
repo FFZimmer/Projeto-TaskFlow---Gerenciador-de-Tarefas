@@ -3,6 +3,7 @@ import { AuthProvider } from "./authContext";
 import PrivateRoute from "./PrivateRoute";
 import Login from "./Login";
 import Dashboard from "./Dashboard";
+import ForgotPassword from "./ForgotPassword";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route
             path="/"
             element={
