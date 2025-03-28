@@ -1,9 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./authContext";
-import PrivateRoute from "./PrivateRoute";
-import Login from "./Login";
-import Dashboard from "./Dashboard";
-import ForgotPassword from "./ForgotPassword";
+import Register from "./Register";
 
 function App() {
   return (
@@ -12,6 +7,7 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/register" element={<Register />} />
           <Route
             path="/"
             element={
