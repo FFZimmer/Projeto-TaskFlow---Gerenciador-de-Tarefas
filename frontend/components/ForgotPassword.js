@@ -6,8 +6,13 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulating API request
-    setMessage("If this email is registered, you will receive a password reset link.");
+    const response = await fetch("http://localhost:5000/api/auth/forgot-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const data = await response.json();
+    setMessage(data.message);
   };
 
   return (
