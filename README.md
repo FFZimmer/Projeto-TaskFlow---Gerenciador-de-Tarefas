@@ -16,7 +16,7 @@ aplicação web completa para gerenciamento de tarefas, onde os usuários podem 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/task-manager-app.git
+   git clone [https://github.com/seu-usuario/task-manager-app.git](https://github.com/FFZimmer/Projeto-TaskFlow---Gerenciador-de-Tarefas.git)
    cd task-manager-app
 
 2. Backend:
