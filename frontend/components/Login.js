@@ -37,6 +37,7 @@ const Login = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <a href="/forgot-password">Forgot Password?</a>
     </div>
   );
 };
